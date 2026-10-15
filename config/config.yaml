@@ -1,0 +1,33 @@
+network:
+  n_stores: 25
+  n_skus: 100
+  random_seed: 42
+
+warehouse:
+  supply_coverage_ratio: 0.85 # Warehouse stock covers ~85% of total network demand (constrained supply)
+
+store_tiers:
+  Flagship:
+    capacity: [1200, 1600]
+    count: 3
+    shipping_cost_mult: 1.0
+  High-Street:
+    capacity: [800, 1100]
+    count: 7
+    shipping_cost_mult: 1.2
+  Mall:
+    capacity: [500, 750]
+    count: 10
+    shipping_cost_mult: 1.5
+  Outlet:
+    capacity: [300, 500]
+    count: 5
+    shipping_cost_mult: 1.8
+
+presentation:
+  default_min_presentation: 5
+
+economics:
+  base_shipping_cost: 1.25
+  stockout_penalty_multiplier: 0.35 # Additional goodwill cost per lost sale
+  markdown_discount_rate: 0.50     # 50% discount on leftover inventory
