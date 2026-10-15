@@ -54,10 +54,6 @@ $$\max_{\mathbf{x}, \mathbf{y}, \mathbf{u}, \mathbf{v}} \sum_{s \in S} \sum_{i \
 1. **Warehouse Supply Bound:** $\sum_{s \in S} x_{s, i} \le W_i \quad \forall i \in I$
 2. **Store Capacity Bound:** $\sum_{i \in I} x_{s, i} \le C_s \quad \forall s \in S$
 3. **Minimum Presentation Stock:** $x_{s, i} \ge M_{s, i} \cdot y_{s, i} \quad \text{and} \quad x_{s, i} \le U_{s, i} \cdot y_{s, i} \quad \forall s, i$
-4. **Demand Hurdle:** $y_{s, i} = 0 \quad \text{if } \hat{D}_{s, i} < M_{s, i}$
-5. **Linearized Balances:** $v_{s, i} \ge x_{s, i} - \hat{D}_{s, i}, \quad u_{s, i} \ge \hat{D}_{s, i} - x_{s, i}, \quad v_{s, i}, u_{s, i} \ge 0$
-6. **Integrality:** $x_{s, i} \in \mathbb{Z}_{\ge 0}, \quad y_{s, i} \in \{0, 1\}$
-
 ---
 
 ## 📂 Repository Structure
@@ -106,13 +102,3 @@ pytest tests/ -v
 python scripts/run_allocation.py
 ```
 
----
-
-## 📄 LaTeX Resume Entry
-
-```latex
-\entry{Inventory Allocation \& Markdown Optimization}{Python, PuLP/OR-Tools, Pandas}{2026}{
-  \item Formulated store-level inventory allocation as an MILP (capacity, min-presentation, shipping-cost constraints) fed by forecast outputs.
-  \item Reduced simulated stock-outs by 60\% and markdown cost by 22\% vs.\ proportional-allocation baseline; compared MILP with a greedy heuristic. \href{https://github.com/Abhinesh-sekar/inventory-allocation-optimization}{[Code]}
-}
-```
